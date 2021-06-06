@@ -49,10 +49,11 @@ class Banco:
     def cuentaIdYaExiste(self,cuenta):
         #verifico si el id ya existe
         yaExisteIdCuenta = False
-        for index,element in self.cuentas:
+        for index,element in enumerate(self.cuentas):
             if(element.numeroCuenta == cuenta.numeroCuenta):
-                yaExiste = True
+                yaExisteIdCuenta = True
                 break
+        return yaExisteIdCuenta
 
     def eliminarCuenta(self,numCuenta):
         for element in self.cuentas:
@@ -79,7 +80,8 @@ class Banco:
 
 class CuentaBancaria:
     def __init__(self,saldoInicial,persona):
-        self.numeroCuenta = random.randint(1000,10000)
+        #self.numeroCuenta = random.randint(1000,10000)
+        self.numeroCuenta = 5000
         if saldoInicial < 0 :
             raise ValueError("El valor no puede ser menor que 0")
         self.saldo = saldoInicial
