@@ -49,7 +49,7 @@ class Banco:
     def cuentaIdYaExiste(self,cuenta):
         #verifico si el id ya existe
         yaExisteIdCuenta = False
-        for index,element in self.cuentas:
+        for index,element in enumerate(self.cuentas):
             if(element.numeroCuenta == cuenta.numeroCuenta):
                 yaExiste = True
                 break
