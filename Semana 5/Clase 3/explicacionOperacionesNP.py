@@ -35,6 +35,7 @@ print(triangularSuperior)
 
 # calcular la matriz triangular inferior:
 triangularInferior = np.tril(matrizEjemplo)
+np.tril
 print("triangular inferior")
 print(triangularInferior)
 
