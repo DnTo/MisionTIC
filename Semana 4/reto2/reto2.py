@@ -23,19 +23,17 @@ def solucion(a):
         Para indexar el elemento en la posición i se hace así (Igual como una lista):
             a[i] 
     
-            
-
     Explicación de lo que debe retornar:
     -matriz: Puede ser de dos tipos (COMO TE SIENTAS MÁS CÓMODO)
         Una matriz de numpy O una lista de listas (El calificador está en las condiciones
         para recibit cualquiera de los dos tipos), en esta matriz debes guardar los
         elementos que hay en el vector a como se especifica en el enunciado
     """
-
     print(type(a))
     if type(a) == type(np.zeros((1))):
         a = a.tolist()
     print(type(a))
+
     
     #creo la matriz
     '''modo: 𝐿 = 𝑛(𝑛+1)/2'''
