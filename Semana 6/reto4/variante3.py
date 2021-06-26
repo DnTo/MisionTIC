@@ -39,10 +39,12 @@ def sede_bancaria(cola_general):
     edad_minima_info = 99
     edad_minima_consignacion = 99
     
-    for index,cli in enumerate(cola_general):
+   # for index,cli in enumerate(cola_general):
+    for cli in cola_general:
         print(cli.nombre, cli.fila_interes,cli.edad,cli.transaccion)
         if(cli.fila_interes.upper() == "CAJA"):
-            cola_caja.append(cola_general[index].nombre)
+            #cola_caja.append(cola_general[index].nombre)
+            cola_caja.append(cli.nombre)
             #calculo la suma de las operaciones
             if cli.transaccion.upper() == "RETIRAR" :
                 suma_retiros +=cli.cantidad_retirar
@@ -53,7 +55,8 @@ def sede_bancaria(cola_general):
                 if cli.edad < edad_minima_consignacion :
                     edad_minima_consignacion = cli.edad
         else:
-            cola_info.append(cola_general[index].nombre)
+           # cola_info.append(cola_general[index].nombre)
+            cola_info.append(cli.nombre)
             if cli.edad < edad_minima_info :
                 edad_minima_info = cli.edad
 
@@ -104,11 +107,11 @@ colaGeneral.append(cliente("nombre5",16,500,"CAJA","CONSIGNAR",0,1501))
 colaGeneral.append(cliente("nombre4",14,0,"CAJA","CONSIGNAR",0,1000))
 colaGeneral.append(cliente("nombre8",13,0,"CAJA","CONSIGNAR",0,1000))
 
-colaGeneral.append(cliente("nombre8",20,1,"INFO","NINGUNA",0,0))
+colaGeneral.append(cliente("nombre89",20,1,"INFO","NINGUNA",0,0))
 colaGeneral.append(cliente("nombre1",12,1000,"INFO","NINGUNA",0,0))
 colaGeneral.append(cliente("nombre6",17,1,"INFO","NINGUNA",0,0))
 colaGeneral.append(cliente("nombre7",19,1,"INFO","NINGUNA",0,0))
-colaGeneral.append(cliente("nombre8",20,1,"INFO","NINGUNA",0,0))
+colaGeneral.append(cliente("nombre88",20,1,"INFO","NINGUNA",0,0))
 
 #sumas
 s = sum(c.dinero_cuenta_bancaria for c in colaGeneral )
