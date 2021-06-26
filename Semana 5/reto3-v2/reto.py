@@ -2,13 +2,15 @@
 # #diccionario    
 dictionary = { 'A':".-", 'B':"-...", 'C':"-.-.", 'D':"-..", 'E':".", 'F':"..-.", 'G':"--.", 'H':"....", 'I':"..", 'J':".---", 'K':"-.-", 'L':".-..", 'M':"--", 'N':"-.", 'O':"---", 'P':".--.", 'Q':"--.-", 'R':".-.", 'S':"...", 'T':"-", 'U':"..-", 'V':"...-", 'W':".--", 'X':"-..-", 'Y':"-.--", 'Z':"--..", } #return mensaje_traducido    return dictionary"""Esta l�nea de c�digo que sigue, permite probar si su ejercicio es correcto"""#NO ELIMINAR LA SIGUIENTE L�NEA DE C�DIGO#pruebas_codigo_estudiante(traductor_a_espanol)##
 letters2Morse = { 'A':".-", 'B':"-...", 'C':"-.-.", 'D':"-..", 'E':".", 'F':"..-.", 'G':"--.", 'H':"....", 'I':"..", 'J':".---", 'K':"-.-", 'L':".-..", 'M':"--", 'N':"-.", 'O':"---", 'P':".--.", 'Q':"--.-", 'R':".-.", 'S':"...", 'T':"-", 'U':"..-", 'V':"...-", 'W':".--", 'X':"-..-", 'Y':"-.--", 'Z':"--..", }
-morse2letters = {".-":'A',"-...":'B',"-.-.":'C',"-..":'D',".": 'E',"..-.":  'F', "--.":'G',      "....":  'H', "..":'I', ".---":'J', "-.-":'K', ".-..":'L', "--":'M', "-.":'N', "---":'O', ".--.":'P', "--.-":'Q', ".-.":'R', "...":'S', "-":'T', "..-":'U',"...-": 'V', ".--":'W', "-..-":'X', "-.--":'Y', "--..":'Z', "/":" " ,'"':""}
+morse2letters = {".-":'A',"-...":'B',"-.-.":'C',"-..":'D',".": 'E',"..-.":  'F', "--.":'G',      "....":  'H', "..":'I', ".---":'J', "-.-":'K', ".-..":'L', "--":'M', "-.":'N', "---":'O', ".--.":'P', "--.-":'Q', ".-.":'R', "...":'S', "-":'T', "..-":'U',"...-": 'V', ".--":'W', "-..-":'X', "-.--":'Y', "--..":'Z', "/":" "}
 frase = "-. --- ... / .... .- -. / .--. .. -.-. .- -.. --- / -.. --- ... / -- --- ... --.- ..- .. - --- ..."
 frase2 = ".... . -- --- ... / . -. -.-. --- -. - .-. .- -.. --- / ..- -. .- / .--. .-.. .- -. - .- / -. ..- -. -.-. .- / .- -. - . ... / ...- .. ... - .-"
 
 frase3 = ".... --- .-.. .- / -- ..- -. -.. --- "
 frasePhase1 = frase.split("/")
 #obtengo todas las palabras
+
+
 
 result = ""
 for word in frasePhase1:   
@@ -17,4 +19,16 @@ for word in frasePhase1:
 		result += morse2letters.get(letter.strip())
 	result+=" "
 	
-print(result.strip())
+print(result)
+
+
+frase3 = ".... --- .-.. .- / -- ..- -. -.. --- "
+mensaje = frase3.strip().split(" ")
+
+traducido=""
+for caracter in mensaje:
+    traducido +=morse2letters[caracter]
+
+
+
+print(traducido)
